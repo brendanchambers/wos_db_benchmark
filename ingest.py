@@ -27,7 +27,7 @@ wosIDs_path = 'wos_cut_wosids.csv'
 
 # sql alchemy connection string:
 db_name = 'test_wos_cut_full'
-connect_string = "mysql+pymysql://{}:{}@localhost:{}?unix_socket=/var/run/mysqld/mysqld.sock".format(my_username, my_pwd, db_name)
+connect_string = "mysql+pymysql://{}:{}@localhost:/{}?unix_socket=/var/run/mysqld/mysqld.sock".format(my_username, my_pwd, db_name)
 
 
 #########################################################################
