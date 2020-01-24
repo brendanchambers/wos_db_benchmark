@@ -12,6 +12,9 @@ master_timer_start = time.time()
 #########################################################################
 #      specifies how to recognize the partial file splits:
 
+with open("config.json" as f):
+    pwd = json.load(f)
+
 data_dir = '/mnt/data/study_dbs/mysql/mysql_data/'
 
 pubs_substring = 'wos_cut_publications'  # postfixed with e.g. batch_0.csv
@@ -28,7 +31,8 @@ connect_string = "mysql+pymysql:///{}?unix_socket=/var/run/mysqld/mysqld.sock".f
 #########################################################################
 # create the database
 
-client_config = {'unix_socket':'/var/run/mysqld/mysqld.sock'}
+client_config = {'unix_socket':'/var/run/mysqld/mysqld.sock',
+                'password': pwd}
 db = pymysql.connect(**client_config)
 
 
