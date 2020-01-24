@@ -13,7 +13,7 @@ master_timer_start = time.time()
 #      specifies how to recognize the partial file splits:
 
 with open("credentials.json",'r') as f:
-    pwd = json.load(f)
+    my_pwd = str(json.load(f)['password'])
 
 data_dir = '/mnt/data/study_dbs/mysql/mysql_data/'
 
@@ -32,7 +32,7 @@ connect_string = "mysql+pymysql:///{}?unix_socket=/var/run/mysqld/mysqld.sock".f
 # create the database
 
 client_config = {'unix_socket':'/var/run/mysqld/mysqld.sock',
-                'password': pwd}
+                'password': my_pwd}
 db = pymysql.connect(**client_config)
 
 

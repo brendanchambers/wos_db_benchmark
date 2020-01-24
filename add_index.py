@@ -8,11 +8,11 @@ master_timer_start = time.time()
 ###################################################################
 
 with open("credentials.json",'r') as f:
-    pwd = json.load(f)
+    my_pwd = str(json.load(f))
 
 client_config = {'unix_socket':'/var/run/mysqld/mysqld.sock',
                 'database':'test_wos_cut_full',
-                'password':pwd}
+                'password': my_pwd}
 
 db = pymysql.connect(**client_config)
 cursor = db.cursor()
