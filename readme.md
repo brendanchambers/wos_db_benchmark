@@ -1,3 +1,17 @@
+# Instructions for creating the database:
+
+### 1. Ingest
+
+### 2. Add indexes
+
+### 3. Run test queries
+
+
+
+
+
+# connection info
+### this is for running on RCC midway2
 
 MySQL config file:  .shared.cnf
 
