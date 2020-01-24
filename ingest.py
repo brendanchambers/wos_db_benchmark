@@ -12,7 +12,7 @@ master_timer_start = time.time()
 #########################################################################
 #      specifies how to recognize the partial file splits:
 
-data_dir = '/project2/jevans/study_dbs/data/full_v1/'
+data_dir = '/mnt/data/study_dbs/mysql/mysql_data/'
 
 pubs_substring = 'wos_cut_publications'  # postfixed with e.g. batch_0.csv
 contrib_substring = 'wos_cut_contributors'
@@ -22,13 +22,13 @@ wosIDs_path = 'wos_cut_wosids.csv'
 
 # sql alchemy connection string:
 db_name = 'test_wos_cut_full'
-connect_string = "mysql+pymysql:///{}?unix_socket=/project2/jevans/study_dbs/mysql/.sql.sock".format(db_name)
+connect_string = "mysql+pymysql:///{}?unix_socket=/mnt/data/study_dbs/mysql/.sql.sock".format(db_name)
 
 
 #########################################################################
 # create the database
 
-client_config = {'unix_socket':'/project2/jevans/study_dbs/mysql/.sql.sock'}
+client_config = {'unix_socket':'/mnt/data/study_dbs/mysql/.sql.sock'}
 db = pymysql.connect(**client_config)
 
 

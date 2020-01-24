@@ -13,6 +13,34 @@
 # connection info
 ### this is for running on RCC midway2
 
+
+
+Example configuration file
+_________________________________________________
+[mysqld]
+socket=/project2/jevans/study_dbs/mysql/.sql.sock
+datadir=/project2/jevans/study_dbs/mysql/mysql_data
+max_connections=56
+max_allowed_packet=16G
+innodb_buffer_pool_size=512M
+net_read_timeout=1000
+
+[client]
+socket=/project2/jevans/study_dbs/mysql/.sql.sock
+max_allowed_packet=1G
+_________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
 MySQL config file:  .shared.cnf
 
 Socket:   .sql.sock
