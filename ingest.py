@@ -14,8 +14,8 @@ master_timer_start = time.time()
 
 with open("credentials.json",'r') as f:
     data = json.load(f)
-    my_username = data['username']
-    my_pwd = data['password']
+    my_username = str(data['username'])
+    my_pwd = str(data['password'])
 
 data_dir = '/mnt/data/study_dbs/data/full_v1/'
 
@@ -27,7 +27,7 @@ wosIDs_path = 'wos_cut_wosids.csv'
 
 # sql alchemy connection string:
 db_name = 'test_wos_cut_full'
-connect_string = "mysql+pymysql://{}@localhost:{}/{}?unix_socket=/var/run/mysqld/mysqld.sock".format(my_username, my_pwd, db_name)
+connect_string = "mysql+pymysql://{}:{}@localhost:{}?unix_socket=/var/run/mysqld/mysqld.sock".format(my_username, my_pwd, db_name)
 
 
 #########################################################################
