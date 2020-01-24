@@ -13,6 +13,7 @@ master_timer_start = time.time()
 #      specifies how to recognize the partial file splits:
 
 with open("credentials.json",'r') as f:
+    my_username = str(json.load(f)['username'])
     my_pwd = str(json.load(f)['password'])
 
 data_dir = '/mnt/data/study_dbs/mysql/mysql_data/'
@@ -25,7 +26,7 @@ wosIDs_path = 'wos_cut_wosids.csv'
 
 # sql alchemy connection string:
 db_name = 'test_wos_cut_full'
-connect_string = "mysql+pymysql:///{}?unix_socket=/var/run/mysqld/mysqld.sock".format(db_name)
+connect_string = "mysql+pymysql://{}@localhost:{}/{}?unix_socket=/var/run/mysqld/mysqld.sock".format(my_username, my_pwd, db_name)
 
 
 #########################################################################
