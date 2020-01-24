@@ -7,7 +7,7 @@ master_timer_start = time.time()
 
 ###################################################################
 
-with open("config.json" as f):
+with open("credentials.json",'r') as f:
     pwd = json.load(f)
 
 client_config = {'unix_socket':'/var/run/mysqld/mysqld.sock',

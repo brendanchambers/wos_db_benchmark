@@ -12,7 +12,7 @@ master_timer_start = time.time()
 #########################################################################
 #      specifies how to recognize the partial file splits:
 
-with open("config.json" as f):
+with open("credentials.json",'r') as f:
     pwd = json.load(f)
 
 data_dir = '/mnt/data/study_dbs/mysql/mysql_data/'
