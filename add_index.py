@@ -6,7 +6,7 @@ import json
 master_timer_start = time.time()
 
 ###################################################################
-client_config = {'unix_socket':'/mnt/data/study_dbs/mysql/.sql.sock',
+client_config = {'unix_socket':'/var/run/mysqld/mysqld.sock',
                 'database':'test_wos_cut_full'}
 
 db = pymysql.connect(**client_config)

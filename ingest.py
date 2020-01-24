@@ -22,13 +22,13 @@ wosIDs_path = 'wos_cut_wosids.csv'
 
 # sql alchemy connection string:
 db_name = 'test_wos_cut_full'
-connect_string = "mysql+pymysql:///{}?unix_socket=/mnt/data/study_dbs/mysql/.sql.sock".format(db_name)
+connect_string = "mysql+pymysql:///{}?unix_socket=/var/run/mysqld/mysqld.sock".format(db_name)
 
 
 #########################################################################
 # create the database
 
-client_config = {'unix_socket':'/mnt/data/study_dbs/mysql/.sql.sock'}
+client_config = {'unix_socket':'/var/run/mysqld/mysqld.sock'}
 db = pymysql.connect(**client_config)
 
 
