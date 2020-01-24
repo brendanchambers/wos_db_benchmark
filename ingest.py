@@ -37,14 +37,16 @@ client_config = {'unix_socket':'/var/run/mysqld/mysqld.sock',
                 'password': my_pwd}
 db = pymysql.connect(**client_config)
 
-
+print('creating database...')
 
 cursor = db.cursor()
 sql = "CREATE DATABASE {}".format(db_name)
 try:
     cursor.execute(sql)
+    print('successfully created.")
 except Exception as e:
     print(e)
+    print('error during creation of database')
 cursor.close()
 db.close()
 
