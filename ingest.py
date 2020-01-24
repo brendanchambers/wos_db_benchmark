@@ -17,7 +17,7 @@ with open("credentials.json",'r') as f:
     my_username = data['username']
     my_pwd = data['password']
 
-data_dir = '/mnt/data/study_dbs/mysql/mysql_data/'
+data_dir = '/mnt/data/study_dbs/data/full_v1/'
 
 pubs_substring = 'wos_cut_publications'  # postfixed with e.g. batch_0.csv
 contrib_substring = 'wos_cut_contributors'
