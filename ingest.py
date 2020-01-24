@@ -43,7 +43,7 @@ cursor = db.cursor()
 sql = "CREATE DATABASE {}".format(db_name)
 try:
     cursor.execute(sql)
-    print('successfully created.")
+    print('successfully created.')
 except Exception as e:
     print(e)
     print('error during creation of database')
