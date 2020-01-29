@@ -8,11 +8,13 @@ master_timer_start = time.time()
 ###################################################################
 
 with open("credentials.json",'r') as f:
-    my_pwd = str(json.load(f))
+    data = json.load(f)
+    my_pwd = data['password']
+    socket = data['socket']
 
-client_config = {'unix_socket':'/var/run/mysqld/mysqld.sock',
-                'database':'test_wos_cut_full',
-                'password': my_pwd}
+client_config = {'unix_socket': socket,
+		'database': 'test_wos_cut_full',
+		 'password': my_pwd}
 
 db = pymysql.connect(**client_config)
 cursor = db.cursor()
@@ -213,7 +215,7 @@ print('elapsed s: {}'.format(end_time - start_time))
 ###################################################################
 db = pymysql.connect(**client_config)
 cursor = db.cursor()
-sql_query = 'DESCRIBE test_wos'
+sql_query = 'DESCRIBE test_wos_cut_full'
 cursor.execute(sql_query)
 
 for el in cursor:

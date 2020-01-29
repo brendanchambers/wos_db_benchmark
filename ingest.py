@@ -16,6 +16,7 @@ with open("credentials.json",'r') as f:
     data = json.load(f)
     my_username = str(data['username'])
     my_pwd = str(data['password'])
+    socket = data['socket']
 
 data_dir = '/mnt/data/study_dbs/data/full_v1/'
 
@@ -27,13 +28,13 @@ wosIDs_path = 'wos_cut_wosids.csv'
 
 # sql alchemy connection string:
 db_name = 'test_wos_cut_full'
-connect_string = "mysql+pymysql://{}:{}@localhost/{}?unix_socket=/var/run/mysqld/mysqld.sock".format(my_username, my_pwd, db_name)
+connect_string = "mysql+pymysql://{}:{}@localhost/{}?unix_socket={}".format(my_username, my_pwd, db_name,socket)
 
 
 #########################################################################
 # create the database
 
-client_config = {'unix_socket':'/var/run/mysqld/mysqld.sock',
+client_config = {'unix_socket': socket,
                 'password': my_pwd}
 db = pymysql.connect(**client_config)
 
