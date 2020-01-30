@@ -33,6 +33,7 @@ db.close()
 ###################################################################
 # add index to SOURCE field of publications
 
+# script crashed halfway - temp commenting out prior finished tasks
 start_time = time.time()
 
 db = pymysql.connect(**client_config)
@@ -213,19 +214,12 @@ print('elapsed s: {}'.format(end_time - start_time))
 
 
 ###################################################################
-db = pymysql.connect(**client_config)
-cursor = db.cursor()
-sql_query = 'DESCRIBE test_wos_cut_full'
-cursor.execute(sql_query)
 
-for el in cursor:
-    print(el)
+print('finished indexing ')
     
 ###################################################################
 
 # TODO add indices as needed to speed up test queries
-
-db.close()
 
 ###################################################################
 
